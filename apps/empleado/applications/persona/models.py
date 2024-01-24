@@ -1,6 +1,7 @@
 from django.db import models
 # Importando la tabla Departamento
 from applications.departamento.models import Departamento
+from ckeditor.fields import RichTextField
 
 # Modelo Habilidades
 class Habilidades(models.Model):
@@ -31,6 +32,8 @@ class Empleado(models.Model):
     #avatar = models.ImageField(upload_to='empleado', blank=True, null=True)
     # Relacion tabla Empleado y Habilidades
     habilidades = models.ManyToManyField(Habilidades)
+    hoja_vida = RichTextField()
+    
     
     class Meta:
         verbose_name = 'Empleado'
